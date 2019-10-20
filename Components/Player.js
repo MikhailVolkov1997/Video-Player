@@ -1,7 +1,7 @@
 import React from 'react';
-import ListVideo from "./ListVideo"
 
-export default class MainContent extends React.Component {
+
+export default class Player extends React.Component {
     constructor(props) {
         super(props)
         this.video = [
@@ -15,7 +15,7 @@ export default class MainContent extends React.Component {
         ]
     }
     render() {
-        return this.video.map(el => <ListVideo title={el.title} url={el.url} /> )
+        return <Text>Player</Text>
          
     }
 }
