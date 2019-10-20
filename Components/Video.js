@@ -3,7 +3,6 @@ import {Text} from "react-native"
 
 export default class Video extends React.Component {
     render () {
-        return <Text>Video</Text>
-        
+        return <Text>Video</Text>  
     }
 }
