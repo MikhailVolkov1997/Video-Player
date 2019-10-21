@@ -9,9 +9,21 @@ import {View} from "react-native"
 export default class FooterTabs extends Component {
     
   state = {
-    loading: true
+    loading: true,
+    isActive: "video"
   }
 
+  onActiveTabs (tabs) {
+     this.setState({isActive: tabs});
+     switch(tabs) {
+       case "player": return Actions.player();
+       case "video": return Actions.video();
+       default: true;
+     }
+  }
+
+
+  
   async componentDidMount() {
     await Font.loadAsync({
       'Roboto': require('native-base/Fonts/Roboto.ttf'),
@@ -28,20 +40,16 @@ export default class FooterTabs extends Component {
             );
             }   
     return (
-      <Container>
-        <Header />
-        <Content />
         <Footer>
           <FooterTab >
-            <Button active onPress={Actions.video}>
+            <Button active={this.state.isActive === "video"} onPress={() => this.onActiveTabs("video") }>
               <Text >Video</Text>
             </Button>
-            <Button onPress={Actions.player}> 
+            <Button active={this.state.isActive === "player"} onPress={() => this.onActiveTabs("player")}> 
               <Text >Player</Text>
             </Button>
           </FooterTab>
         </Footer>
-      </Container>
     );
   }
 }

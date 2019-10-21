@@ -1,23 +1,22 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import {Router, Scene, Stack, Lightbox} from "react-native-router-flux"
+import {Router, Scene, Stack, Lightbox, Tabs} from "react-native-router-flux"
 import Video from "./Video"
 import Player from "./Player"
 import FooterTabs from './FooterTabs';
+import { Container } from 'native-base';
 
 export default function App() {
-  return (
+  return (<Container>
     <Router>
     <Stack key="root"> 
-      <Scene key="footer" component={FooterTabs} />
-      <Scene key="video" component={Video}  title="Video"/>
-      <Scene key="player" component={Player} title="Player"/>
-      
-    
+      <Scene key="video" type="replace" component={Video}   title="Video"/>
+      <Scene key="player" type="replace" component={Player}  title="video.title"/>
     </Stack>
-  
   </Router>
-    
+  <FooterTabs />
+  </Container>
+
   );
 }
 
