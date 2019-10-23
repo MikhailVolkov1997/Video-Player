@@ -11,7 +11,7 @@ export default function App() {
     <Router>
     <Stack key="root"> 
       <Scene key="video" type="replace" component={Video}   title="Video"/>
-      <Scene key="player" type="replace" component={Player}  title="video.title"/>
+      <Scene key="player" type="replace" component={Player} hideNavBar={true} />
     </Stack>
   </Router>
   <FooterTabs />
