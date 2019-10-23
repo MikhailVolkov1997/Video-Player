@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Header, Content, Footer, FooterTab, Button, Text } from 'native-base';
+import { Footer, FooterTab, Button, Text } from 'native-base';
 import {Actions} from "react-native-router-flux";
 import * as Font  from 'expo-font';
 import { Ionicons } from '@expo/vector-icons'
